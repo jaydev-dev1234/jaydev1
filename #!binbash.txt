@@ -1,0 +1,16 @@
+#!/bin/bash
+echo -e "####################group creation####################"
+groupadd -g 2300 varascp
+echo -e "####################user and passwd creation###############"
+useradd -u 2301 -g 2300 -d /home/bobby -s /bin/bash bobby;echo "bobby" |passwd --stdin bobby
+iso -fstype=iso9660,ro,nosuid,nodev : /dev/sr0
+local -fstype=ext4 :/dev/vg1/lv1
+
+
+<virtualHost 192.168.1.222:80>
+ServerAdmin mail@example.com
+   DocumentRoot /var/www/html/web3
+   ServerName web3
+   ErrorLog logs/nareshins.com-error_log
+   CustomLog logs/nareshins.com-access_log common
+</VirtualHost>
